@@ -18,7 +18,7 @@ chrome.pageAction.onClicked.addListener(function(tab) {
     var video_id = tab.url .split("embed/")[1].split("?")[0];
     chrome.tabs.update(tab.id, {url: "https://youtube.com/watch?v=" + video_id});
   } else if (tab.url.indexOf("watch") > -1 ) {
-    var video_id = tab.url .split("v=")[1].split("&")[0];
+    var video_id = tab.url.split("v=")[1].split("&")[0];
     chrome.tabs.update(tab.id, {url: "https://youtube.com/embed/" + video_id + "?autoplay=1"});
   }
 });
